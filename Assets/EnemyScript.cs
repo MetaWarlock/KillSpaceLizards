@@ -13,14 +13,14 @@ public class EnemyScript : MonoBehaviour
     public float speed;
     public float tilt;
     public float xMin, xMax, zMin, zMax;
-    Rigidbody playa;
+    Rigidbody enemy;
     float nextShotTime;
     float xPos;
 
     void Start()
     {
-        playa = GetComponent<Rigidbody>();
-        xPos = playa.transform.position.x;
+        enemy = GetComponent<Rigidbody>();
+        xPos = enemy.transform.position.x;
     }
 
     // Update is called once per frame
@@ -31,14 +31,14 @@ public class EnemyScript : MonoBehaviour
         {
             return;
         }
-        if (playa.transform.position.z <= -42)
+        if (enemy.transform.position.z <= -42)
         {
             speed = 0;
         }
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        Vector3 direction2 = (playerTransform.position - playa.position).normalized;
-        playa.transform.rotation = Quaternion.LookRotation(-direction2);
+        Vector3 direction2 = (playerTransform.position - enemy.position).normalized;
+        enemy.transform.rotation = Quaternion.LookRotation(-direction2);
 
         float moveHor;
         if (xPos > 0)
@@ -51,11 +51,11 @@ public class EnemyScript : MonoBehaviour
         }
 
         var moveVer = speed * -1;
-        playa.velocity = new Vector3(moveHor, 0, moveVer) * speed;
-        var clampedX = Mathf.Clamp(playa.position.x, xMin, xMax);
-        var clampedZ = Mathf.Clamp(playa.position.z, zMin, zMax);
-        playa.position = new Vector3(clampedX, 0, clampedZ);
-        playa.rotation = Quaternion.Euler(tilt * playa.velocity.z, 0, tilt * -playa.velocity.x);
+        enemy.velocity = new Vector3(moveHor, 0, moveVer) * speed;
+        var clampedX = Mathf.Clamp(enemy.position.x, xMin, xMax);
+        var clampedZ = Mathf.Clamp(enemy.position.z, zMin, zMax);
+        enemy.position = new Vector3(clampedX, 0, clampedZ);
+        enemy.rotation = Quaternion.Euler(tilt * enemy.velocity.z, 0, tilt * -enemy.velocity.x);
 
         if (Time.time > nextShotTime)
         {
