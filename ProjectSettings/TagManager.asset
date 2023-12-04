@@ -9,6 +9,8 @@ TagManager:
   - LSR
   - Enemy
   - EnemyLSR
+  - Plane
+  - Egor
   layers:
   - Default
   - TransparentFX

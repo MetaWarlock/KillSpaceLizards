@@ -14,6 +14,7 @@ public class PlayaScript : MonoBehaviour
     public Transform LazGun2;
     public float shotDelay;
     public float shotDelaySecondary;
+    public float maneurspeed;
     public float speed;
     public float tilt;
     public float xMin, xMax, zMin, zMax;
@@ -34,8 +35,7 @@ public class PlayaScript : MonoBehaviour
             return;
         }
         var moveHor = Input.GetAxis("Horizontal");
-        var moveVer = Input.GetAxis("Vertical");
-        playa.velocity = new Vector3(moveHor, 0, moveVer) * speed;
+        playa.velocity = new Vector3(moveHor * maneurspeed, 0, speed);
         var clampedX = Mathf.Clamp(playa.position.x, xMin, xMax);
         var clampedZ = Mathf.Clamp(playa.position.z, zMin, zMax);
         playa.position = new Vector3(clampedX, 0, clampedZ);

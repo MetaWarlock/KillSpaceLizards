@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 70a9041ab85428848898c7cab09a41bc, type: 3}
       propertyPath: m_Name
-      value: SpaceEgor
+      value: SpaceEgor 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 70a9041ab85428848898c7cab09a41bc, type: 3}
       propertyPath: m_TagString
@@ -78,36 +78,19 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 70a9041ab85428848898c7cab09a41bc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5522945735811277337}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70a9041ab85428848898c7cab09a41bc, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 8285116098397848520}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 70a9041ab85428848898c7cab09a41bc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 617720683418465361}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 70a9041ab85428848898c7cab09a41bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1157978575999158180}
   m_SourcePrefab: {fileID: 100100000, guid: 70a9041ab85428848898c7cab09a41bc, type: 3}
 --- !u!1 &8531295985068182104 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 70a9041ab85428848898c7cab09a41bc, type: 3}
   m_PrefabInstance: {fileID: 8531295985068215544}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5522945735811277337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8531295985068182104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebc3517aea42ae442ad565ad6991b242, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  egorBoom: {fileID: 1798741116580325497, guid: d215ec6eb2de73a40b327c4252633c73, type: 3}
-  sSBoom: {fileID: 1485913433319340734, guid: 1e6c87b2655ba1f4c8280e64a429cfbe, type: 3}
-  rotationSpeed: 5
-  speedMin: 15
-  speedMax: 40
 --- !u!54 &8285116098397848520
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -156,3 +139,20 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.43800002
   m_Center: {x: 0.0018343478, y: -0.030993894, z: -0.017543942}
+--- !u!114 &1157978575999158180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8531295985068182104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e1b748a59b44f14cad6a97364f93241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  egorBoom: {fileID: 1798741116580325497, guid: d215ec6eb2de73a40b327c4252633c73, type: 3}
+  sSBoom: {fileID: 1485913433319340734, guid: 1e6c87b2655ba1f4c8280e64a429cfbe, type: 3}
+  rotationSpeed: 5
+  speedMin: 15
+  speedMax: 40
