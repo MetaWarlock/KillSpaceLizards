@@ -13,6 +13,9 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position = playa.transform.position;
+        if (playa != null)
+        {
+            gameObject.transform.position = playa.transform.position;
+        }
     }
 }

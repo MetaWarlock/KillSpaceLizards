@@ -11,6 +11,7 @@ TagManager:
   - EnemyLSR
   - Plane
   - Egor
+  - Emitter
   layers:
   - Default
   - TransparentFX

@@ -104,7 +104,7 @@ MonoBehaviour:
   shotDelay: 1.5
   laserSpeed: 50
   speed: 6
-  tilt: 1
+  tilt: 0.5
   xMin: -28
   xMax: 28
   zMin: -48

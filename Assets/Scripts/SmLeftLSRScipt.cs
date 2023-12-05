@@ -9,5 +9,6 @@ public class SmLeftLSRScipt : MonoBehaviour
     void Start()
     {
         GetComponent<Rigidbody>().velocity = new Vector3(-speed, 0, speed);
+        AudioManagerScript.instance.PlaySFX(0);
     }
 }

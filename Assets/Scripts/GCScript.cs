@@ -9,6 +9,7 @@ public class GCScript : MonoBehaviour
     public UnityEngine.UI.Text shieldText;
     public GameObject menu;
     public GameObject sSBoom;
+    public GameObject shieldChargeProc;
 
     public static GCScript instance;
     public bool isStarted = false; 
@@ -29,13 +30,15 @@ public class GCScript : MonoBehaviour
     public void decreaseShield(int increment)
     {
         shield -= increment;
+        Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         if (shield == 0)
         {
-            Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
             Destroy(GameObject.FindGameObjectWithTag("Player"));
             Instantiate(sSBoom, playerTransform.position, Quaternion.identity);
+            AudioManagerScript.instance.PlaySFX(3);
             return;
         }
+        Instantiate(shieldChargeProc, playerTransform.position, Quaternion.identity);
         shieldText.text = "Shields: " + (shield - 1);
     }
     void Start()
@@ -46,11 +49,5 @@ public class GCScript : MonoBehaviour
             isStarted = true;
             menu.SetActive(false);
         });
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

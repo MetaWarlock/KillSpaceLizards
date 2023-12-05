@@ -31,14 +31,6 @@ public class EnemyScript : MonoBehaviour
         {
             return;
         }
-        if (enemy.transform.position.z <= -42)
-        {
-            speed = 0;
-        }
-
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        Vector3 direction2 = (playerTransform.position - enemy.position).normalized;
-        enemy.transform.rotation = Quaternion.LookRotation(-direction2);
 
         float moveHor;
         if (xPos > 0)
@@ -57,9 +49,18 @@ public class EnemyScript : MonoBehaviour
         enemy.position = new Vector3(clampedX, 0, clampedZ);
         enemy.rotation = Quaternion.Euler(tilt * enemy.velocity.z, 0, tilt * -enemy.velocity.x);
 
+        if (!GameObject.FindGameObjectWithTag("Player"))
+        {
+            return;
+        }
+
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        Vector3 direction2 = (playerTransform.position - enemy.position).normalized;
+        enemy.transform.rotation = Quaternion.LookRotation(-direction2);
+
         if (Time.time > nextShotTime)
         {
-            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            //playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
             Vector3 direction = (playerTransform.position - LazGunMC.position).normalized;
             GameObject shot = Instantiate(LazaShot, LazGunMC.position, Quaternion.identity);
             Rigidbody shotRigidbody = shot.GetComponent<Rigidbody>();
@@ -76,14 +77,16 @@ public class EnemyScript : MonoBehaviour
             Destroy(gameObject);
             Destroy(other.gameObject);
             Instantiate(sSBoom, transform.position, Quaternion.identity);
+            AudioManagerScript.instance.PlaySFX(3);
             GCScript.instance.increaseScore(5);
         }
         if (other.tag == "Enemy")
         {
             Destroy(gameObject);
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
             Instantiate(sSBoom, transform.position, Quaternion.identity);
-            Instantiate(sSBoom, other.transform.position, Quaternion.identity);
+            //Instantiate(sSBoom, other.transform.position, Quaternion.identity);
+            AudioManagerScript.instance.PlaySFX(3);
             GCScript.instance.increaseScore(5);
         }
     }

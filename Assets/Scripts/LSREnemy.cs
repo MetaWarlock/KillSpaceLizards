@@ -4,4 +4,8 @@ using UnityEngine;
 
 public class LSREnemy : MonoBehaviour
 {
+    private void Start()
+    {
+        AudioManagerScript.instance.PlaySFX(1);
+    }
 }

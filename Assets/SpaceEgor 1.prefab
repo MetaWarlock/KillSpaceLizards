@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   egorBoom: {fileID: 1798741116580325497, guid: d215ec6eb2de73a40b327c4252633c73, type: 3}
-  sSBoom: {fileID: 1485913433319340734, guid: 1e6c87b2655ba1f4c8280e64a429cfbe, type: 3}
+  shieldChargeProc: {fileID: 100004, guid: d76ddb1ebf9d1714ca71a5af0f23d2cf, type: 3}
   rotationSpeed: 5
   speedMin: 15
   speedMax: 40
