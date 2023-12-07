@@ -747,7 +747,7 @@ MonoBehaviour:
   shieldText: {fileID: 1923682473}
   menu: {fileID: 1278715531}
   sSBoom: {fileID: 1485913433319340734, guid: 1e6c87b2655ba1f4c8280e64a429cfbe, type: 3}
-  shieldChargeProc: {fileID: 1000011128802252, guid: b8d6580a6b611234eaff9ea9b24e5ee6, type: 3}
+  shieldChargeProc: {fileID: 1798741116580325497, guid: d215ec6eb2de73a40b327c4252633c73, type: 3}
   isStarted: 0
 --- !u!4 &587123505
 Transform:
