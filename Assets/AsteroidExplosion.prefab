@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: a49596ebf788acd4ab1281bffea444b1, type: 3}
       propertyPath: m_TagString
-      value: Emitter
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: a49596ebf788acd4ab1281bffea444b1, type: 3}
       propertyPath: m_LocalScale.x

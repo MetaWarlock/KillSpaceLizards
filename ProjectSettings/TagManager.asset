@@ -10,8 +10,8 @@ TagManager:
   - Enemy
   - EnemyLSR
   - Plane
-  - Egor
   - Emitter
+  - Asteroid
   layers:
   - Default
   - TransparentFX

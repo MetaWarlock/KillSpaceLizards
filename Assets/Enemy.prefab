@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523a1d99926a6574aaf60d90e7d4b307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LazaShot: {fileID: 4008423639066118108, guid: d474641555eab1e4c98f70e5a25c2653, type: 3}
-  sSBoom: {fileID: 1485913433319340734, guid: 1e6c87b2655ba1f4c8280e64a429cfbe, type: 3}
-  LazGunMC: {fileID: 7982202972922124200}
+  laserShot: {fileID: 4008423639066118108, guid: d474641555eab1e4c98f70e5a25c2653, type: 3}
+  starShipExplosion: {fileID: 1485913433319340734, guid: 1e6c87b2655ba1f4c8280e64a429cfbe, type: 3}
+  LaserGun: {fileID: 7982202972922124200}
   shotDelay: 1.5
   laserSpeed: 50
   speed: 6
@@ -119,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7982202972922124200}
   m_Layer: 0
-  m_Name: LazGunMC
+  m_Name: LaserGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1434627103891488, guid: 52d340ed9c2714c4f8aabf1f82df1b58, type: 3}
       propertyPath: m_Name
-      value: E1
+      value: EngineRight
       objectReference: {fileID: 0}
     - target: {fileID: 4368491947231596, guid: 52d340ed9c2714c4f8aabf1f82df1b58, type: 3}
       propertyPath: m_LocalPosition.x
@@ -272,7 +272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4388063611836051347, guid: 3322c842c425b864ea8eb933bff766ca, type: 3}
       propertyPath: m_Name
-      value: EnemySS
+      value: EnemyStarShip
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -294,7 +294,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1434627103891488, guid: 52d340ed9c2714c4f8aabf1f82df1b58, type: 3}
       propertyPath: m_Name
-      value: E2
+      value: EngineLeft
       objectReference: {fileID: 0}
     - target: {fileID: 4368491947231596, guid: 52d340ed9c2714c4f8aabf1f82df1b58, type: 3}
       propertyPath: m_LocalPosition.x

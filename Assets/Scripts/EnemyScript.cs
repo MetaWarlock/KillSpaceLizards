@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    public GameObject LazaShot;
-    public GameObject sSBoom;
+    public GameObject laserShot;
+    public GameObject starShipExplosion;
 
-    public Transform LazGunMC;
+    public Transform LaserGun;
     Transform playerTransform;
 
     public float shotDelay;
@@ -27,7 +27,7 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
 
-        if (!GCScript.instance.isStarted)
+        if (!GameControllerScript.instance.isStarted)
         {
             return;
         }
@@ -61,8 +61,8 @@ public class EnemyScript : MonoBehaviour
         if (Time.time > nextShotTime)
         {
             //playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-            Vector3 direction = (playerTransform.position - LazGunMC.position).normalized;
-            GameObject shot = Instantiate(LazaShot, LazGunMC.position, Quaternion.identity);
+            Vector3 direction = (playerTransform.position - LaserGun.position).normalized;
+            GameObject shot = Instantiate(laserShot, LaserGun.position, Quaternion.identity);
             Rigidbody shotRigidbody = shot.GetComponent<Rigidbody>();
             shotRigidbody.velocity = direction * laserSpeed;
             shotRigidbody.rotation = Quaternion.LookRotation(direction);
@@ -76,18 +76,18 @@ public class EnemyScript : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
-            Instantiate(sSBoom, transform.position, Quaternion.identity);
+            Instantiate(starShipExplosion, transform.position, Quaternion.identity);
             AudioManagerScript.instance.PlaySFX(3);
-            GCScript.instance.increaseScore(5);
+            GameControllerScript.instance.increaseScore(5);
         }
         if (other.tag == "Enemy")
         {
             Destroy(gameObject);
             //Destroy(other.gameObject);
-            Instantiate(sSBoom, transform.position, Quaternion.identity);
+            Instantiate(starShipExplosion, transform.position, Quaternion.identity);
             //Instantiate(sSBoom, other.transform.position, Quaternion.identity);
             AudioManagerScript.instance.PlaySFX(3);
-            GCScript.instance.increaseScore(5);
+            GameControllerScript.instance.increaseScore(5);
         }
     }
 }

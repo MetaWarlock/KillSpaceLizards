@@ -27,7 +27,7 @@ public class ShieldScript : MonoBehaviour
         {
             Destroy(gameObject);
             //Instantiate(shieldPicked, other.transform.position, Quaternion.identity);
-            GCScript.instance.increaseShield(1);
+            GameControllerScript.instance.increaseShield(1);
             return;
         }
         Destroy(gameObject);
